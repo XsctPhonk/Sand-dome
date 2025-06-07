@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prodigy Sandbox</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .fake-prodigy {
+      background: #1c1c3c;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      max-width: 600px;
+      width: 90%;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      background: #00d4ff;
+      color: #000;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 1rem;
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="fake-prodigy">
+    <h1>Prodigy Sandbox</h1>
+    <p>This is a safe environment to test bookmarklet hacks.</p>
+    <button onclick="runTestHack()">Run Example Hack</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function runTestHack() {
+      document.getElementById('output').textContent = '✅ Fake hack ran successfully!';
+      // You can paste real bookmarklet JS here for testing
+      // For example: modify DOM, simulate Prodigy object, etc.
+    }
+
+    // Optional: Define mock objects for realistic testing
+    window.prodigy = {
+      user: {
+        name: "TestUser",
+        level: 100,
+        gold: 999999
+      },
+      setGold: function(amount) {
+        this.user.gold = amount;
+        document.getElementById('output').textContent = `💰 Gold set to ${amount}`;
+      }
+    };
+  </script>
+</body>
+</html>
